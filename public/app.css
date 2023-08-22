@@ -1,0 +1,35 @@
+
+body{
+
+  background-color: cornsilk;
+   color:cadetblue;
+
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+p{
+
+    line-height: 1.2;
+
+}
+
+article{
+    margin-left: 40%;
+}
+
+article + article
+{  
+    margin-top: 2rem;
+    border-top: 1px solid;
+  
+  
+     padding: 2px;
+   
+}
+
+
+
+footer{
+    display: flex;
+    margin-top: 50rem;
+}
