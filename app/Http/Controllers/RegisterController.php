@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class RegisterController extends Controller
 {
@@ -21,8 +22,11 @@ class RegisterController extends Controller
         $validatedAttributes = request()->validate([
             'name'=>'required|min:3|max:255',
             'username'=>'required|min:3|max:255|unique:users,username',
+            'speciality'=>'required|min:3|max:255',
+            'department' => ['required', Rule::exists('categories','id')],
             'email'=>'required|email|unique:users,email',
-            'password'=>'required|min:8|max:255',
+            'phoneNumber'=>'required|numeric|min:10',
+            'password'=>'required|min:8|max:255|confirmed',
 
         
             // 'name'=>['required','min:3','max:255'],
@@ -34,8 +38,8 @@ class RegisterController extends Controller
  
         // 1way for encrypt password here   , 2way in the user file by create mutator method
         // $validatedAttributes['password']= bcrypt($validatedAttributes['password']);
-
      //log in the user
+
       $user=  User::create($validatedAttributes);
       auth()->login($user);
 

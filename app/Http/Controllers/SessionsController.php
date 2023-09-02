@@ -34,8 +34,11 @@ class SessionsController extends Controller
        
         ]);
 
+        $remember =request()->input('remember');
+
+
         // check log in attempts with the user daat
-        if(auth()->attempt($validatedAttributes))
+        if(auth()->attempt($validatedAttributes , $remember  ))
          { 
 
             session()->regenerate();  //this command for avoid session fixation

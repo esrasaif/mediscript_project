@@ -1,7 +1,16 @@
 <header class="max-w-xl mx-auto mt-20 text-center">
-    <h1 class="text-2xl mb-4 mt-2">
+    
+    {{-- <div class="">
+        <img src="/images/Add_a_subheading__2_-removebg-preview.png" alt="not found">
+      </div> --}}
+
+        <h1 class="text-2xl mb-4 mt-2">
         <span class="text-blue-500">AI-based medical</span> 
   transcription and summarization tool for enhanced healthcare documentation. </h1>
+
+ 
+
+    
 
     <div class="lg:space-y-0 lg:space-x-2  flex inline-flex">
         
